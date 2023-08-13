@@ -7,10 +7,13 @@ import Home from "./routes/Home";
 import Detail from './routes/Detail';
 
 function App() {
+
+  const URL = process.env.PUBLIC_URL;
+
   return <Router>
     <Routes>
-      <Route path="/" element={<Home/>} />
-      <Route path="/movie/:id" element={<Detail/>} />
+      <Route path={`${URL}/`} element={<Home/>} />
+      <Route path={`${URL}/movie/:id`} element={<Detail/>} />
     </Routes>
   </Router>;
 }
